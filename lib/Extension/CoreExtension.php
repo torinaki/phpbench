@@ -75,7 +75,7 @@ use PhpBench\Util\TimeUnit;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Process\ExecutableFinder;
 use Hoa\Ruler\Ruler;
-use PhpBench\Benchmark\Asserter\RulerAsserter;
+use PhpBench\Benchmark\Asserter\SymfonyAsserter;
 
 class CoreExtension implements ExtensionInterface
 {
@@ -156,7 +156,7 @@ class CoreExtension implements ExtensionInterface
         });
 
         $container->register('benchmark.asserter', function (Container $container) {
-            return new RulerAsserter();
+            return new SymfonyAsserter();
         });
 
         $container->register('benchmark.executor.microtime', function (Container $container) {
